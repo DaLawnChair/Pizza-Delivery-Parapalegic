@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GrappleOn.wav-40526ac3ab57d232bebeaed3d70ac6db.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/Grapple sfx/GrappleOn.wav"
+dest_files=[ "res://.import/GrappleOn.wav-40526ac3ab57d232bebeaed3d70ac6db.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

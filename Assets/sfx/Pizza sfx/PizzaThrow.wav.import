@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PizzaThrow.wav-4455e67686eafe0eea4557600ce037b6.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/Pizza sfx/PizzaThrow.wav"
+dest_files=[ "res://.import/PizzaThrow.wav-4455e67686eafe0eea4557600ce037b6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

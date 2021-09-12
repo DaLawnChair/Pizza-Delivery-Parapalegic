@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GrappleRelease.wav-6b12b8a272fd83a88fac23a0e56c2033.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/Grapple sfx/GrappleRelease.wav"
+dest_files=[ "res://.import/GrappleRelease.wav-6b12b8a272fd83a88fac23a0e56c2033.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
