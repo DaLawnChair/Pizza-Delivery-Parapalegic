@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="Pizza Delivery Parapalegic"
 run/main_scene="res://Home Screen.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
