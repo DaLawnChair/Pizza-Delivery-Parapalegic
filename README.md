@@ -10,7 +10,7 @@ intensive platformer.
 
 Contributions are always welcome!
 
-Players are encouraged to to [download the GitHub project]()
+Players are encouraged to to [download the GitHub project](https://github.com/DaLawnChair/Pizza-Delivery-Parapalegic)
 and modify the game how they see fit. Whether it's designing new maps, 
 changing artwork, or adjusting the physics of the game, users 
 should make their Pizza Delivery Parapalegic expecience the best
