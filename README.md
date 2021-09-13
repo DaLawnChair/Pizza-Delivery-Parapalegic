@@ -28,6 +28,6 @@ before adding in new nodes or adjusting existing ones.
   
 ## License
 
-MIT. Refer to License.txt for more information.
+Apache License Version 2.0. Refer to License.txt for more information.
 
   
