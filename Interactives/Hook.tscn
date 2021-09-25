@@ -1,25 +1,23 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Hook.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Rope.png" type="Texture" id=2]
-[ext_resource path="res://Hook.gd" type="Script" id=3]
-[ext_resource path="res://Assets/sfx/Grapple sfx/GrappleRelease.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/sfx/Grapple sfx/GrappleTo.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/sfx/Grapple sfx/GrappleOn.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/sfx/Grapple sfx/Grappling.wav" type="AudioStream" id=7]
-
-
+[ext_resource path="res://Scripts/Hook.gd" type="Script" id=1]
+[ext_resource path="res://Assets/sfx/Grapple sfx/Grappling.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Hook.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sfx/Grapple sfx/GrappleOn.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/sfx/Grapple sfx/GrappleRelease.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Rope.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sfx/Grapple sfx/GrappleTo.wav" type="AudioStream" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.21473
 height = 0.0
 
 [node name="Hook" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 
 [node name="Rope" type="Sprite" parent="."]
 position = Vector2( 0, 0.667419 )
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 centered = false
 offset = Vector2( -8, 14 )
 region_enabled = true
@@ -29,7 +27,7 @@ region_rect = Rect2( 0, 0, 16, 360 )
 collision_layer = 4
 
 [node name="Sprite" type="Sprite" parent="Grapple"]
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 offset = Vector2( 0, 8 )
 flip_v = true
 
@@ -44,15 +42,15 @@ one_shot = true
 [node name="GrappleSFX" type="Node2D" parent="."]
 
 [node name="GrappleOn" type="AudioStreamPlayer" parent="GrappleSFX"]
-stream = ExtResource( 6 )
+stream = ExtResource( 4 )
 volume_db = -10.0
 
 [node name="GrappleRelease" type="AudioStreamPlayer" parent="GrappleSFX"]
-stream = ExtResource( 4 )
-
-[node name="GrappleTo" type="AudioStreamPlayer" parent="GrappleSFX"]
 stream = ExtResource( 5 )
 
-[node name="Grappling" type="AudioStreamPlayer" parent="GrappleSFX"]
+[node name="GrappleTo" type="AudioStreamPlayer" parent="GrappleSFX"]
 stream = ExtResource( 7 )
+
+[node name="Grappling" type="AudioStreamPlayer" parent="GrappleSFX"]
+stream = ExtResource( 2 )
 [connection signal="timeout" from="Hook Timer" to="." method="_hook_timer_timeout"]

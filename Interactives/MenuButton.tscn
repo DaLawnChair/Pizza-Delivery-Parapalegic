@@ -2,10 +2,9 @@
 
 [ext_resource path="res://Assets/Button Themes/Button Not Selected.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Button Themes/Button Selected.tres" type="StyleBox" id=2]
-[ext_resource path="res://Menu Button.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Menu Button.gd" type="Script" id=3]
 [ext_resource path="res://Fonts/Guji32Font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/sfx/ButtonHover.wav" type="AudioStream" id=5]
-
 
 [node name="Menu Button" type="Button"]
 margin_right = 232.0

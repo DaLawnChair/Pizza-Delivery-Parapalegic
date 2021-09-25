@@ -3,7 +3,7 @@ extends KinematicBody2D
 This script controls the players' movement, visuals, and throwing of objects.
 """
 
-const pizza_path = preload("res://Pizza.tscn") #Path to Pizza.
+const pizza_path = preload("res://Interactives/Pizza.tscn") #Path to Pizza.
 		
 const MOVE_SPEED = 500			#Movement speed.
 const GRAVITY = 30				#Gravity.
@@ -25,6 +25,11 @@ var current_side = "right"			#Current side the Player is facing.
 func _ready() -> void:
 	#pizza_count should represent the number of houses.
 	pizza_count = get_parent().get_node("Houses").get_child_count() 
+	#Get the stage name and remove all the prefixes and suffixes.
+	var stage_name = get_tree().current_scene.filename
+	stage_name = stage_name.substr(stage_name.find("Stages/")+7)
+	stage_name.erase(stage_name.length()-5,5)
+	$"Camera2D/Stage Name".text = stage_name #Display stage_name
 	
 #Update graphics, time, and direction every frame.
 func _process(delta: float) -> void:
@@ -44,7 +49,7 @@ func _process(delta: float) -> void:
 	else: #If on the ground...
 		if velocity.x != 0: #Change wheel_turn to the direction the Player is going.
 			wheel_turn = sign(velocity.x)
-		if !$PlayerSFX/WheelSpin.playing and abs(velocity.x) > 20: #Play 'WheelSpin' when at sufficient velocity.x.
+		if !$PlayerSFX/WheelSpin.playing and abs(velocity.x) > 40: #Play 'WheelSpin' when at sufficient velocity.x.
 			$PlayerSFX/WheelSpin.play()
 		#Rotate wheels dependantly on velocity.x
 		$"Person/Front Wheel".rotation_degrees += velocity.x / 10
@@ -74,8 +79,6 @@ func change_side(side) -> void:
 		$Person/ArmRotator/Arm.position.x = -5.5
 		$"Person/Front Wheel".position.x = -14.2
 		$"Person/Back Wheel".position.x = 17.5
-		$Body.position.x = -3.4
-		$"Feet and Wheels".position.x = 2.6
 		current_side = "left"
 	else: #side == "right" 
 		$Person.set_flip_h(false)
@@ -91,10 +94,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("shoot_hook"): #"shoot_hook" is defaulted to mouse left click. 
 		if event.pressed:
 			#Shoot the hook to the given direction. 
-			$Hook.shoot(direction)
+			#$Hook.call_deferred("shoot",direction)
+			$Hook._shoot(direction)
 		else:
 			#Release the hook when the "shoot_hook" button is released.
-			$Hook.release()
+			#$Hook.call_deferred("release")
+			$Hook._release()
 	if event.is_action("throw_pizza"): #"throw_pizza" is defaulted to mouse right click.
 		if event.pressed and pizza_count > 0: #When "throw_pizza" is pressed and Player has more than 0 pizzas, throw a pizza.
 			pizza_throw()

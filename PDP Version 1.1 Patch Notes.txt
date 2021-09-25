@@ -1,0 +1,50 @@
+Pizza Delivery Paraplegic Version 1.1 Patch Notes
+-------------------------------------------------------------------
+-Added HookCursor.png to Assets/Unused
+-Scenes and scripts placed in folders: scripts in "Scripts" folder, stages in "Stages" folder, and interactables in "Interactables" folder
+-Added Stages "Morning Mellow" and "ecapS"
+-"Boundary Distributor".gd: a script useful in distributing the coordinates of the return_position of the Player to all Boundary child nodes
+-Window size changed from 1024x600 to full screen(aspect ratio is kept)
+-Version number placed in "Home Screen".tscn
+-Stage names changed to from "Stage(#)" to unique names
+	-Stage1 -> “Green Garden”
+	-Stage2 -> “City Site”
+	-Stage3 -> “Space”
+
+-All functions names now include an '_' at the front
+-Game and all instances of its name changed to spell 'Paraplegic' right
+-All Stages scene node (the first node) name changed to "World"
+-Stages//World.tscn changed to Test.tscn as it is the testing grounds
+	-Added a Boundary to this scene.
+-All instances of the Node Boundaries can now implement "Boundary Distributor".gd if chosen to
+-House:
+	-House.png updated from 5x5 pixels to 16x16 pixels, making its details much clearer
+-Tutorial: 
+	-Grammar of some of the labels
+	-Boundaries/Boundary nodes split into "Gap Boundaries" and "Climbing Boundaries". Each one has "Boundary Distributor".gd attached
+	-"Climbing Boundaries".return_position changed to position Player closer to the middle of the walls
+	-Instructions>"P&G Climb" position moved closer to the middle of the gap
+-Player:
+	-Added "Stage Name" as a child of Camera2D
+	-_ready()
+		-Finds and displays the stage's name in "Camera2D/Stage Name"
+	-Body and "Feet and Wheels" collision boxes enlarged and centered
+	-change_side():
+		-No longer moves Body and "Feet and Wheels" to prevent scenarios where the player can stick themselves to gaps
+		when side is changed
+	-_process():
+		-'WheelSpin' sound effect requires more speed to play
+-Boundaries:
+	-.start_position_x and .start_position_y replaced with return_position, a Vector2 variable.
+	-.player_path changed to get_tree().get_root().get_node("World").get_node("Player") from get_parent().get_parent().get_node("Player")
+	-_ready():
+		-calls Boundaries._distribute() if self is a child node of Boundaries
+	-_on_Body_Entered()
+		-changed body.get_node("Hook").hooked = false -> body.get_node("Hook").call_deferred("_release") to prevent Hook from flying 
+and pulling Player even after hitting self
+-Space:
+	-Boundaries/Boundary nodes adjusted to form perfect rectangle (results in Boundary2 being moved slightly closer to Player)
+		-Boundary3 and Boundary4 adjusted to be positioned right beside the platforms
+
+
+

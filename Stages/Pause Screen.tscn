@@ -1,9 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://MenuButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Pause.gd" type="Script" id=2]
+[ext_resource path="res://Interactives/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Guji32Font.tres" type="DynamicFont" id=3]
-
 
 [node name="Pause Screen" type="CanvasLayer"]
 
@@ -48,7 +47,7 @@ margin_top = 424.0
 margin_right = 632.0
 margin_bottom = 480.0
 text = "Home"
-reference_path = "res://Home Screen.tscn"
+reference_path = "res://Stages/Home Screen.tscn"
 
 [node name="ScoreText" type="Label" parent="Pause"]
 margin_left = 336.0

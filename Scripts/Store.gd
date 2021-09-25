@@ -19,5 +19,5 @@ func _on_Body_Entered(body:Node) -> void:
 			player_path.pizza_counter = []
 		else:
 			#Default stores to change scene to the end screen.
-			get_tree().change_scene("res://End Screen.tscn")
+			get_tree().change_scene("res://Stages/End Screen.tscn")
 

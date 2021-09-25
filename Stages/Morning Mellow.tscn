@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Terrain.tres" type="TileSet" id=1]
+[ext_resource path="res://Interactives/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interactives/House.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Backgrounds/Background3.png" type="Texture" id=4]
+[ext_resource path="res://Interactives/Boundary.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Boundary Distributor.gd" type="Script" id=6]
+[ext_resource path="res://Interactives/Store.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Stages/Pause Screen.tscn" type="PackedScene" id=8]
+
+[node name="World" type="Node2D"]
+
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Backgrounds"]
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1088, 856 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -1114098, -1610612733, 0, -1114097, -1610612733, 0, -1114096, -1610612733, 0, -1114095, -1610612733, 0, -1114094, -1610612733, 0, -1114093, -1610612733, 0, -1114092, -1610612733, 0, -1114091, -1610612733, 0, -1114090, -1610612733, 0, -1048554, -1610612733, 0, -983018, -1610612733, 0, -917489, -1610612736, 0, -917488, -1610612736, 0, -917487, -1610612736, 0, -917486, -1610612736, 0, -917485, -1610612736, 0, -917484, -1610612736, 0, -917483, -1610612736, 0, -917482, -1610612733, 0, -851956, -1610612733, 0, -851953, -1610612733, 0, -786417, -1610612733, 0, -720887, -1610612733, 0, -655357, -1610612733, 0, -655352, -1610612733, 0, -655351, -1610612733, 0, -458753, -1610612733, 0, -393225, -1610612733, 0, -393219, -1610612733, 0, -262157, -1610612733, 0, -327667, -1610612736, 0, -327666, -1610612736, 0, -131089, -1610612733, 0, -13, -1610612733, 0, -7, -1610612733, 0, -2, -1610612733, 0, -65533, -1610612733, 0, -65528, -1610612733, 0, 65547, -1610612733, 0, 196588, -1610612736, 0, 196589, -1610612736, 0, 196590, -1610612736, 0, 196591, -1610612736, 0, 262157, -1610612733, 0, 327681, -1610612736, 0, 327682, -1610612736, 0, 458768, -1610612736, 0, 458769, -1610612736, 0, 655358, -1610612733, 0, 589829, -1610612733, 0, 720885, -1610612733, 0, 655373, -1610612733, 0, 786418, -1610612733, 0, 983019, -1610612736, 0, 983020, -1610612736, 0, 983021, -1610612736, 0, 983022, -1610612736, 0, 983023, -1610612736, 0, 983031, -1610612736, 0, 983032, -1610612736, 0, 983033, -1610612736, 0, 983034, -1610612736, 0, 917511, -1610612736, 0, 917512, -1610612736, 0, 917513, -1610612736, 0, 917514, -1610612736, 0, 917515, -1610612736, 0 )
+
+[node name="Houses" type="Node2D" parent="."]
+
+[node name="House" parent="Houses" instance=ExtResource( 3 )]
+position = Vector2( 1088, 360 )
+
+[node name="House2" parent="Houses" instance=ExtResource( 3 )]
+position = Vector2( -1216, 40 )
+
+[node name="House3" parent="Houses" instance=ExtResource( 3 )]
+position = Vector2( 128, 232 )
+
+[node name="House4" parent="Houses" instance=ExtResource( 3 )]
+position = Vector2( 896, -408 )
+
+[node name="Boundaries" type="Node2D" parent="."]
+script = ExtResource( 6 )
+return_position = Vector2( -1088, 856 )
+
+[node name="Boundary" parent="Boundaries" instance=ExtResource( 5 )]
+position = Vector2( 0, 1120 )
+scale = Vector2( 44, 1 )
+
+[node name="Boundary2" parent="Boundaries" instance=ExtResource( 5 )]
+position = Vector2( 0, -1120 )
+scale = Vector2( 44, 1 )
+
+[node name="Boundary3" parent="Boundaries" instance=ExtResource( 5 )]
+position = Vector2( -1440, 0 )
+scale = Vector2( 1, 36 )
+
+[node name="Boundary4" parent="Boundaries" instance=ExtResource( 5 )]
+position = Vector2( 1440, 0 )
+scale = Vector2( 1, 36 )
+
+[node name="Store" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1304, -984 )
+reference_path = "res://Stages/Space.tscn"
+
+[node name="Pause Screen" parent="." instance=ExtResource( 8 )]

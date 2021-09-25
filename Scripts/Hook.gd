@@ -17,7 +17,7 @@ var item_picked_up = false #Whether the Pizza that is hooked onto is already pic
 var collision #Movement and collision of the hook.
 
 #Shoots the hook in a given direction.
-func shoot(dir: Vector2) -> void:
+func _shoot(dir: Vector2) -> void:
 	$Grapple/CollisionShape2D.disabled = false #Allows Grapple to collide.
 	if flying == false: #Plays 'GrappleTo' when just shot.
 		$GrappleSFX/GrappleTo.play()
@@ -27,7 +27,7 @@ func shoot(dir: Vector2) -> void:
 	timer.start() #Start the timer.
 
 #Release the hook.
-func release() -> void:
+func _release() -> void:
 	$Grapple/CollisionShape2D.disabled = true #Disables Grapple from colliding.
 	if (flying or hooked): #Plays 'GrappleRelease' when "shoot_hook"(In Player._input(event: InputEvent)) is let go of.  
 		$GrappleSFX/GrappleRelease.play()
@@ -63,12 +63,12 @@ func _physics_process(_delta: float) -> void:
 				collision.collider.get_node("Pizza Collector").monitoring = true
 		else:
 			if timer.is_stopped(): #Prevents infinite distance hooking.
-				release() #Release the hook after timer has stopped.
+				_release() #Release the hook after timer has stopped.
 				
 	#Prevents the hook from clamping onto a picked up pizza.
 	if item_picked_up:
 		item_picked_up = false #Reset it for future use.
-		release() #Release to prevent the clamping.
+		_release() #Release to prevent the clamping.
 		
 	grapple = $Grapple.global_position	#Set Grapple as starting position for next frame.
 

@@ -19,8 +19,9 @@ func _input(event:InputEvent) -> void:
 #Pauses the game.
 func _pause() -> void:
 	new_pause_state = not get_tree().paused #Change the pause state.
-	get_tree().paused = not get_tree().paused #This pauses or unpauses the root when needed.
+	get_tree().paused = not get_tree().paused #This pauses or unpauses the root when needed.	
 	visible = new_pause_state #Make this scene visible.
 	#Display current scoring.
 	$ScoreText.text = "           PAUSED:\n---------------------------------\n" + Globals.scoring("Current")
+
 

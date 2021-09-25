@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			if "House" in collision.collider.name: #If collding with a House...
 				if collision.collider.already_scored == false: 
 					#If you can score on the house, call that House's .add_score() and Pizza Collector's ._remove().
-					collision.get_collider().add_score()
+					collision.get_collider()._add_score()
 					$"Pizza Collector".call_deferred("_remove") 
 	
 			velocity.x = 0 #Stop horizontal motion.
