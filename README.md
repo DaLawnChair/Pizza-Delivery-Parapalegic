@@ -8,6 +8,12 @@ pizza delivery man who uses a grappling hook to make their deliveries. The game 
 intensive platformer. 
 
 
+## Installation 
+
+NOTE: this program ONLY RUNS on Windows. Sorry for the inconvenience. 
+
+On the GitHub page, navigate to Code>"Download ZIP". Once downloaded, open your Downloads folder and look for the "Pizza Delivery Paraplegic".ZIP file. Drag and drop the file into a folder and extract the contents there. Find and open the .exe file to begin the Pizza Delivery Paraplegic experience. 
+
 ## Contributing
 
 Contributions are always welcome!
