@@ -38,7 +38,7 @@ Apache License Version 2.0. Refer to LICENSE for more information.
 
 ## Demo
 
-![](https://media.giphy.com/media/x9w1Zt5JMlWlPIiAP8/giphy.gif)
+![](https://media.giphy.com/media/x9w1Zt5JMlWlPIiAP8/giphy-downsized-large.gif)
 
   
 
