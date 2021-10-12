@@ -26,8 +26,6 @@ version for them. Please read over the comments left on the .gd files before
 before adding in new nodes or adjusting existing ones.
 
 
-
-  
 ## Authors
 
 - [John Zhou (aka DaLawnChair)](https://www.github.com/dalawnchair)
@@ -36,5 +34,10 @@ before adding in new nodes or adjusting existing ones.
 ## License
 
 Apache License Version 2.0. Refer to LICENSE for more information.
+
+
+## Demo
+
+![](https://giphy.com/gifs/x9w1Zt5JMlWlPIiAP8.gif)
 
   
