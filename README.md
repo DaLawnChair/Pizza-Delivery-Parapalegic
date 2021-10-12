@@ -38,6 +38,6 @@ Apache License Version 2.0. Refer to LICENSE for more information.
 
 ## Demo
 
-![](https://giphy.com/gifs/x9w1Zt5JMlWlPIiAP8.gif)
+![](https://media.giphy.com/media/x9w1Zt5JMlWlPIiAP8/giphy.gif)
 
   
