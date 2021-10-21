@@ -3,9 +3,7 @@
 
 **Version 1.1**
 
-Pizza Delivery Paraplegic is a 2D platformer in which the player plays as a 
-pizza delivery man who uses a grappling hook to make their deliveries. The game is suited for indivisuals looking for a quick, mechanically 
-intensive platformer. 
+Pizza Delivery Paraplegic is a 2D platformer in which the player plays as a pizza delivery man who uses a grappling hook to make their deliveries. The game is suited for individuals looking for a quick, mechanically intensive platformer.
 
 
 ## Installation 
