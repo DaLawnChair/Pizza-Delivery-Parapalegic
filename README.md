@@ -27,7 +27,7 @@ before adding in new nodes or adjusting existing ones.
 ## Authors
 
 - [John Zhou (aka DaLawnChair)](https://www.github.com/dalawnchair)
-- [OptionalDev For the grapple hook base code](https://gitlab.com/godotdemos/hook-demo)
+- [Optional for the grapple hook base code](https://gitlab.com/godotdemos/hook-demo)
 
   
 ## License
